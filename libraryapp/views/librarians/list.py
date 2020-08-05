@@ -17,7 +17,8 @@ def list_librarians(request):
             l.user_id,
             u.first_name,
             u.last_name,
-            u.email
+            u.email,
+            u.username
         from libraryapp_librarian l
         join auth_user u on l.user_id = u.id
         """)
@@ -33,6 +34,7 @@ def list_librarians(request):
             lib.first_name = row["first_name"]
             lib.last_name = row["last_name"]
             lib.email = row["email"]
+            lib.username = row["username"]
 
             all_librarians.append(lib)
 

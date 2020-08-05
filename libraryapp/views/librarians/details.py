@@ -19,10 +19,13 @@ def get_librarian(librarian_id):
             l.user_id,
             u.first_name,
             u.last_name,
-            u.email
+            u.email,
+            u.username,
+            u.last_login
         from libraryapp_librarian l
         join auth_user u on l.user_id = u.id
-        """, (librarian_id))
+        where u.id = ?
+        """, (librarian_id,))
 
         return db_cursor.fetchone()
 
