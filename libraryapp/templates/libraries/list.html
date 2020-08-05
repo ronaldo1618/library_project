@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Libraries</h1>
-
+    <a href="{% url 'libraryapp:library_form' %}">Create a new library</a>
     <ol>
     {% for library in all_libraries%}
       <li>
