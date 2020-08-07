@@ -1,11 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Librarians</title>
-  </head>
-  <body>
-    <li>{{ librarian.first_name }} {{ librarian.last_name }}</li>
-  </body>
-</html>
+{% extends 'shared/base.html' %}
+
+{% block content %}
+    <h3>Name: {{ librarian.first_name }} {{ librarian.last_name }}</h3>
+    <p>Username: {{ librarian.username }}</p>
+    <p>Email: {{ librarian.email }}</p>
+    <p>Last Login: {{ librarian.last_login }}</p>
+{% endblock %}

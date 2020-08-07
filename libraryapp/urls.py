@@ -1,5 +1,7 @@
 from django.urls import path
 from django.urls import include
+from django.conf import settings
+from django.conf.urls.static import static
 from .views import *
 
 app_name = "libraryapp"
@@ -15,4 +17,7 @@ urlpatterns = [
     path('library/form', library_form, name='library_form'),
     path('books/<int:book_id>/', book_details, name='book'),
     path('librarians/<int:librarian_id>/', librarian_details, name='librarian'),
-]
+    path('libraries/<int:library_id>/', library_details, name='library'),
+    path('books/<int:book_id>/form/', book_edit_form, name='book_edit_form'),
+    path('register/', register_user, name='register')
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
