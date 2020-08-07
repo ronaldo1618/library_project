@@ -1,5 +1,3 @@
-
-
 {% extends 'shared/base.html' %}
 
 {% block content %}
@@ -10,7 +8,7 @@
     <ol>
     {% for library in all_libraries %}
         <li>
-            <a href="{% url 'libraryapp:libraries' library.id %}">
+            <a href="{% url 'libraryapp:library' library.id %}">
                 {{ library.title }}
             </a>
             ({{ library.address }})

@@ -9,3 +9,4 @@ from .books.details import book_details
 from .librarians.details import librarian_details
 from .libraries.details import library_details
 from .books.form import book_form, book_edit_form
+from .auth.register import register_user
